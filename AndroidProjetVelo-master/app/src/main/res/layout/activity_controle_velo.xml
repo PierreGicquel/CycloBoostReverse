@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.ppp.esir.projetvelo.activities.ControleVeloActivity">
+
+
+    <include layout="@layout/toolbar" />
+
+
+    <RelativeLayout
+        android:id="@+id/relativeLayoutMap"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/toolbar">
+
+        <LinearLayout
+            android:id="@+id/layoutDistTimeRest"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:padding="5dp"
+            android:visibility="gone"
+            android:background="@color/colorPrimaryLight">
+            <TextView
+                android:id="@+id/distanceRest"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:layout_weight="1"
+                android:textSize="20sp"
+                android:textColor="@android:color/white"/>
+            <TextView
+                android:id="@+id/timeRest"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:textSize="20sp"
+                android:textColor="@android:color/white"/>
+        </LinearLayout>
+
+        <include
+            android:id="@+id/includeVeloPanel"
+            layout="@layout/velo_panel_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentStart="true" />
+
+        <fragment
+            android:id="@+id/map"
+            class="com.google.android.gms.maps.MapFragment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/includeVeloPanel"
+            android:layout_below="@id/layoutDistTimeRest"/>
+
+
+    </RelativeLayout>
+
+
+</RelativeLayout>
